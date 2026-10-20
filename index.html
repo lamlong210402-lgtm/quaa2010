@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8dce8">
+<title>Khu vườn bí mật · 20/10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="grain" aria-hidden="true"></div>
+<div id="particles" aria-hidden="true"></div>
+<main>
+<section class="scene active door-scene" id="door">
+  <div class="scene-stars" aria-hidden="true">✦　·　✧　　　·　✦</div>
+  <p class="eyebrow">MỘT MÓN QUÀ NHỎ DÀNH CHO Thúy</p>
+  <h1>Khu vườn<br><em>bí mật</em></h1>
+  <p class="lead">Có một nơi dịu dàng đang chờ Thúy khám phá…</p>
+  <div class="door-stage">
+    <div class="door-glow"></div>
+    <div class="doorway-garden" aria-hidden="true">
+      <div class="mini-sun"></div><div class="mini-hill hill-back"></div><div class="mini-hill hill-front"></div>
+      <div class="mini-path"></div><div class="mini-flowers"><b>✿</b><b>❀</b><b>✿</b><b>✿</b><b>❀</b></div>
+    </div>
+    <div class="door-arch"></div>
+    <div class="gate" id="gate" role="button" tabindex="0" aria-label="Mở cánh cửa">
+      <div class="wing left-wing"><span class="door-wreath">✿</span><i class="handle"></i><b class="door-engraving">♡</b></div>
+      <div class="wing right-wing"><span class="door-wreath">❀</span><i class="handle"></i><b class="door-engraving">♡</b></div>
+    </div>
+    <div class="door-vines vine-left">❧ ✿ ❧</div><div class="door-vines vine-right">❧ ❀ ❧</div>
+    <div class="step step-one"></div><div class="step step-two"></div>
+  </div>
+  <button class="primary" id="openDoor">Mở cánh cửa <b>✧</b></button>
+  <small class="hint">Chạm vào cánh cửa để bắt đầu</small>
+</section>
+
+<section class="scene" id="sleep">
+  <p class="eyebrow">CHƯƠNG I · KHU VƯỜN ĐANG NGỦ</p><h2>Suỵt… hoa vẫn còn đang ngủ</h2>
+  <p class="subtitle">Những mầm hoa đang khát nước. Thúy giúp Lâm đánh thức chúng nhé?</p>
+  <div class="garden sleepy">
+    <div class="sky-orb"></div><div class="cloud cloud-a"></div><div class="cloud cloud-b"></div>
+    <div class="hill hill-a"></div><div class="hill hill-b"></div><div class="garden-path"></div>
+    <div class="garden-tree tree-a"><i></i><b>✿</b></div><div class="garden-tree tree-b"><i></i><b>❀</b></div>
+    <div class="plants" id="sleepPlants"></div><div class="garden-fireflies"></div>
+    <div class="garden-sign">KHU VƯỜN NHỎ <span>♡</span></div>
+  </div>
+  <p class="story">“Một chút dịu dàng cũng có thể đánh thức cả khu vườn.”</p>
+  <button class="primary" id="startWater">Đánh thức khu vườn <b>✧</b></button>
+</section>
+
+<section class="scene" id="water">
+  <p class="eyebrow">CHƯƠNG II · CHĂM SÓC NHỮNG MẦM XANH</p><h2>Mình tưới hoa nhé!</h2>
+  <p class="subtitle">Chạm vào bình tưới, sau đó chạm vào từng mầm cây.</p>
+  <div class="garden water-garden">
+    <div class="sky-orb"></div><div class="cloud cloud-a"></div><div class="cloud cloud-b"></div>
+    <div class="hill hill-a"></div><div class="hill hill-b"></div><div class="garden-path"></div>
+    <div class="garden-tree tree-a"><i></i><b>✿</b></div><div class="garden-tree tree-b"><i></i><b>❀</b></div>
+    <div class="plants" id="waterPlants"></div>
+    <button class="can" id="can" aria-label="Chọn bình tưới"><span class="can-body">♡</span><i class="can-spout"></i><b class="can-handle"></b><small>CHỌN BÌNH TƯỚI</small></button>
+    <div class="progress"><div><span>Những mầm hoa</span><strong id="waterCount">0 / 5</strong></div><div class="track"><i id="waterBar"></i></div></div>
+  </div>
+  <p class="story" id="waterTip">Chọn bình tưới rồi chạm vào một mầm cây.</p>
+  <button class="primary" id="waterNext" disabled>Tiếp tục <b>✧</b></button>
+</section>
+
+<section class="scene" id="bloom">
+  <p class="eyebrow">CHƯƠNG III · PHÉP MÀU NỞ HOA</p><h2>Nhìn kìa, hoa nở rồi!</h2>
+  <p class="subtitle">Nhờ có Thúy, khu vườn đã rực rỡ trở lại.</p>
+  <div class="garden bloom-garden">
+    <div class="sky-orb"></div><div class="cloud cloud-a"></div><div class="cloud cloud-b"></div>
+    <div class="hill hill-a"></div><div class="hill hill-b"></div><div class="garden-path"></div>
+    <div class="garden-tree tree-a blooming"><i></i><b>✿</b></div><div class="garden-tree tree-b blooming"><i></i><b>❀</b></div>
+    <div class="big-flowers" id="bigFlowers"></div><div class="garden-fireflies"></div>
+    <div class="garden-sign">Thúy ĐÃ LÀM ĐƯỢC RỒI <span>♡</span></div>
+  </div>
+  <p class="story">“Mỗi bông hoa đều có một điều dễ thương muốn kể với Thúy…”</p>
+  <button class="primary" id="explore">Khám phá những bông hoa <b>✧</b></button>
+</section>
+
+<section class="scene explore-scene" id="exploreScene">
+  <p class="eyebrow">CHƯƠNG IV · NHỮNG ĐIỀU DỄ THƯƠNG</p><h2>Mỗi bông hoa, một lời chúc</h2>
+  <p class="subtitle">Chạm vào từng bông hoa để khám phá điều đang được cất giấu nhé.</p>
+  <div class="flower-grid" id="flowerGrid"></div>
+  <div class="progress wish-progress"><div><span>Những lời chúc đã tìm thấy</span><strong id="wishCount">0 / 8</strong></div><div class="track"><i id="wishBar"></i></div></div>
+  <p class="story" id="exploreTip">Cứ thong thả khám phá nhé, khu vườn không đi đâu cả.</p>
+  <button class="primary" id="secretBtn" hidden>Khám phá điều bí mật <b>✧</b></button>
+</section>
+
+<section class="scene secret-scene" id="secret">
+  <div class="secret-night" aria-hidden="true"></div><p class="eyebrow">MỘT ĐIỀU CHỈ DÀNH RIÊNG CHO Thúy</p>
+  <div class="secret-halo"><div class="secret-flower-art"><i></i><i></i><i></i><i></i><i></i><b>✧</b></div></div>
+  <h2>Một bông hoa bí mật</h2><p class="subtitle">Thúy đã tìm thấy tất cả những lời chúc. Chạm vào đây để mở món quà cuối cùng nhé.</p>
+  <button class="primary" id="openSecret">Mở món quà cuối cùng <b>✧</b></button>
+</section>
+
+<section class="scene finale" id="finale">
+  <p class="eyebrow">GỬI Thúy, VÀO NGÀY 20/10</p><h2>Một bó hoa<br><em>dành riêng cho Thúy</em></h2>
+  <div class="bouquet-art" aria-label="Bó hoa được kết từ những bông hồng, mẫu đơn và hoa cúc">
+    <div class="bouquet-glow"></div><div class="wrap-paper paper-back"></div><div class="bouquet-stems"></div>
+    <div class="bouquet-blossoms"><i class="rose rose-one"></i><i class="rose rose-two"></i><i class="rose rose-three"></i><i class="peony peony-one"></i><i class="peony peony-two"></i><i class="daisy daisy-one"></i><i class="daisy daisy-two"></i><i class="lavender lavender-one"></i><i class="lavender lavender-two"></i></div>
+    <div class="wrap-paper paper-front"></div><div class="bouquet-ribbon"></div>
+  </div>
+  <article class="letter"><strong>GỬI THÚY 🌷</strong><p id="finalMessage">Chúc Thúy có một ngày 20/10 thật vui vẻ nha! Mong Thúy luôn giữ được nụ cười của mình, gặp nhiều điều tốt đẹp và có thật nhiều khoảnh khắc đáng yêu. Dù đôi lúc có ngày hơi mệt, mong Thúy vẫn nhớ rằng Thúy xứng đáng với thật nhiều điều dịu dàng. Cảm ơn Thúy đã ghé thăm khu vườn nhỏ này. 💗</p><p class="signature">Thân gửi, <b id="sender">Lâm</b></p></article>
+  <button class="primary" id="hug">Ôm bó hoa nhé <b>♡</b></button><button class="text-btn" id="restart">Dạo lại khu vườn ↺</button>
+</section>
+</main>
+
+<div class="modal" id="modal" aria-hidden="true"><article class="wish-card"><button id="closeModal" class="close" aria-label="Đóng">×</button><div class="wish-art" id="wishArt"><span class="flower-drawing flower-rose"><i></i><i></i><i></i><i></i><i></i><b></b></span></div><p class="eyebrow">MỘT LỜI CHÚC NHỎ</p><h2 id="wishTitle"></h2><p id="wishText"></p><small>Được gửi bằng thật nhiều sự dịu dàng ♡</small></article></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body></html>
